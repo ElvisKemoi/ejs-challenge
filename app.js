@@ -17,6 +17,7 @@ app.use(express.static("public"));
 
 
 app.get("/", (req,res)=>{
+
   content= {
     startingContent: homeStartingContent,
     post: posts

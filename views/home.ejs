@@ -11,5 +11,7 @@
 
 <% post.forEach((pos)=>{ %>
 <h2> <%= pos.title %> </h2>
-<p> <%= pos.content %></p>
+<p> <%= pos.content.substring(0, 100)+ "..."; %></p>
+<a href="/posts/<%= pos.title %>">Read More</a>
+
 <%})%>
