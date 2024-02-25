@@ -53,21 +53,18 @@ app.post("/compose", (req,res)=>{
 
 })
 
-
-app.get("/posts/:postName", (req,res)=>{
+app.get("/posts/:postName", function(req,res){
   const postName = _.lowerCase(req.params.postName);
-  const titles = []
-  posts.forEach((postTit)=>{
-    titles.push(_.lowerCase(postTit.title))
+  posts.forEach(function(post){
+    if (_.lowerCase(post.title) === postName){
+      content = {
+        title: post.title,
+        contentParagraph: post.content
+      }
+      res.render("post", content)
+    }
   })
-  if(titles.includes(postName)){
-    console.log("Match found!")
-  }else{
-    console.log("Match not found!")
-  }  
-}
-)
-
+})
 
 
 
