@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+<h1>Home</h1>
+<p><%= startingContent%> </p>
+
+<h2>Posts Section</h2>
+
+
+
+
+
+
+<% post.forEach((pos)=>{ %>
+<h2> <%= pos.title %> </h2>
+<p> <%= pos.content %></p>
+<%})%>
